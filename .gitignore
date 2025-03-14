@@ -1,0 +1,14 @@
+#編譯後的檔案
+bin/
+
+#eclipse相關檔
+.settings/
+.classpath
+.project
+
+#intelliJ相關的檔案
+*.idea 
+*.IML 
+
+#mac相關檔案
+.DS_Store
