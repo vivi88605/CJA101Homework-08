@@ -5,16 +5,17 @@ import java.util.Scanner;
 
 public class Homework3 {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		Homework3 hw3 = new Homework3();
-		hw3.testTriangle();
-		hw3.guessNumber();
-		hw3.lotterySelector();
+		hw3.testTriangle(sc);
+		hw3.guessNumber(sc);
+		hw3.lotterySelector(sc);
+		sc.close();
 	}
 
-	public void testTriangle() {
+	public void testTriangle(Scanner sc) {
 		// 請設計一隻程式，使用者輸入三個數字後，
 		// 輸出結果會為正三角形、等腰三角形、直角三角形、其它三角形或不是三角形。
-		Scanner sc = new Scanner(System.in);
 		System.out.println("===三角形判斷===");
 		int[] triangle = new int[3];
 		for (int i = 0; i < 3; i++) {
@@ -48,11 +49,10 @@ public class Homework3 {
 		System.out.printf("三邊由小到大為:%d %d %d，%s。\n", triangle[0], triangle[1], triangle[2], result);
 	}
 
-	public void guessNumber() {
+	public void guessNumber(Scanner sc) {
 		// 請設計一隻程式，會亂數產生一個0~100的數字，然後可以玩猜數字遊戲。
 		// 猜錯會提示大於或小於正確答案，猜對時顯示＂猜對了！答案就是N＂
 		System.out.println("===猜一個0~100之間的數字===");
-		Scanner sc = new Scanner(System.in);
 		int ans = (int) (Math.random() * (100 + 1)) + 0;
 //		System.out.println("答案:" + ans);
 		while (true) {
@@ -69,14 +69,13 @@ public class Homework3 {
 		}
 	}
 
-	public void lotterySelector() {
+	public void lotterySelector(Scanner sc) {
 		// 阿文很喜歡簽大樂透(1~49)，但他是個善變的人，
 		// 上次討厭數字是4，但這次他想要依心情決定討厭哪個數字。
 		// 請您設計一隻程式，讓阿文可以輸入他不想要的數字(1~9)，
 		// 畫面會顯示他可以選擇的號碼與總共有幾個號碼可以選。
 		System.out.println("===大樂透選號===");
 		while (true) {
-			Scanner sc = new Scanner(System.in);
 			System.out.print("這次大樂透選號不想要哪個數字:");
 			int num = sc.nextInt();
 			int count = 0;
