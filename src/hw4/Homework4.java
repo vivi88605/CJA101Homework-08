@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Homework4 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-//		int[] myArr = { 29, 100, 39, 41, 50, 8, 66, 77, 95, 15 };
-//		arrAVG(myArr);
-//		reverseStr(sc);
-//		countVowel();
-//		borrowMoney(sc);
+		int[] myArr = { 29, 100, 39, 41, 50, 8, 66, 77, 95, 15 };
+		arrAVG(myArr);
+		reverseStr(sc);
+		countVowel();
+		borrowMoney(sc);
 		countDay(sc);
-//		highestScore();
+		highestScore();
 		sc.close();
 	}
 
@@ -111,10 +111,10 @@ public class Homework4 {
 		int day = sc.nextInt();
 		int[] dayPerMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-			dayPerMonth[1]+=1;
+			dayPerMonth[1] += 1;
 		}
 		while (true) {
-			if (month>0&&month<=12&&day>0&&day<dayPerMonth[month-1]) { //日期合法
+			if (month > 0 && month <= 12 && day > 0 && day < dayPerMonth[month - 1]) { // 日期合法
 				int dayCount = 0;
 				for (int i = 0; i < (month - 1); i++) {
 					dayCount += dayPerMonth[i];
