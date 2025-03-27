@@ -20,7 +20,15 @@ public class Homework3 {
 		int[] triangle = new int[3];
 		for (int i = 0; i < 3; i++) {
 			System.out.printf("請輸入第%d個邊長:", i + 1);
-			triangle[i] = sc.nextInt();
+			while(true) {				
+				int length = sc.nextInt();
+				if(length>0) {
+					triangle[i] = length;
+					break;
+				}else {
+					System.out.println("請輸入一個大於0的整數");
+				}
+			}
 		}
 		Arrays.sort(triangle);
 		int a = triangle[0], b = triangle[1], c = triangle[2];
@@ -30,7 +38,7 @@ public class Homework3 {
 			if (a == b && b == c) {
 				// 判斷是否為正三角形
 				result = "是正三角形";
-			} else if ((a == b || b == c) && (a * a + b * b == c * c)) {
+			} else if ((a == b ) && (a * a + b * b == c * c)) {
 				// 判斷是否為等腰直角三角形
 				result = "是等腰直角三角形";
 			} else if (a == b || b == c) {
@@ -41,7 +49,7 @@ public class Homework3 {
 				result = "是直角三角形";
 			} else {
 				// 其他三角形
-				result = "是三角形";
+				result = "是不規則的三角形";
 			}
 		} else {
 			result = "不是三角形";
