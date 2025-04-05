@@ -1,5 +1,6 @@
 package hw6;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
@@ -12,22 +13,30 @@ public class Calculator {
 	public void powerXY(Scanner sc) throws CalException {
 		boolean state = true;
 		int result = 1;
-		while (state == true) {
-			System.out.println("請輸入x的值:");
-			int x = sc.nextInt();
-			System.out.println("請輸入y的值:");
-			int y = sc.nextInt();
-			if (x == 0 && y == 0) {
-				throw new CalException("0的0次方沒有意義！");
-			} else if (y < 0) {
-				throw new CalException("次方為負數，結果回傳不為整數！");
-			} else {
-				state = false;
-				for (int i = 0; i < y; i++) {
-					result *= x;
+		while (state) {
+			try {
+//				c.powerXY(sc);
+				System.out.println("請輸入x的值:");
+				int x = sc.nextInt();
+				System.out.println("請輸入y的值:");
+				int y = sc.nextInt();
+				if (x == 0 && y == 0) {
+					throw new CalException("0的0次方沒有意義！");
+				} else if (y < 0) {
+					throw new CalException("次方為負數，結果回傳不為整數！");
+				} else {
+					state = false;
+					for (int i = 0; i < y; i++) {
+						result *= x;
+					}
+					System.out.printf("%d的%d次方等於%d", x, y, result);
 				}
+			} catch (CalException e) {
+				System.out.println(e.getMessage());
+			} catch (InputMismatchException e) {
+				System.out.println("輸入格式不正確: 請輸入數字");
+				sc.next(); // 清除非數字輸入，避免無限迴圈
 			}
-			System.out.printf("%d的%d次方等於%d", x, y, result);
 		}
 	}
 }

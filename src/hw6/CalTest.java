@@ -1,18 +1,11 @@
 package hw6;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CalTest {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CalException {
 		Scanner sc = new Scanner(System.in);
 		Calculator c = new Calculator();
-		try {
-			c.powerXY(sc);
-		} catch (CalException e) {
-			e.printStackTrace();
-		} catch (InputMismatchException e) {
-			System.out.println("輸入格式不正確: 請輸入數字");
-		}
+		c.powerXY(sc);
 	}
 }
