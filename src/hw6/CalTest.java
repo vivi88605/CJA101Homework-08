@@ -8,7 +8,7 @@ public class CalTest {
 		Scanner sc = new Scanner(System.in);
 		Calculator c = new Calculator();
 		try {
-			System.out.println(c.powerXY(sc));
+			c.powerXY(sc);
 		} catch (CalException e) {
 			e.printStackTrace();
 		} catch (InputMismatchException e) {
