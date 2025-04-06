@@ -1,5 +1,10 @@
 package hw7;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Homework7_1 {
 //- 請自行建立一個文字檔Sample.txt,內容如下:
 //
@@ -15,7 +20,26 @@ public class Homework7_1 {
 //
 //	請寫一個程式讀取這個Sample.txt檔案,並輸出以下訊息:
 //	Sample.txt檔案共有xxx個位元組,yyy個字元,zzz列資料
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) throws IOException {
+		File sample = new File("src/hw7/Sample.txt");
+//		System.out.println(sample.exists());
+		// 檔案名稱
+		String fileName = sample.getName();
+		// xxx個位元組
+		long bytesCount = sample.length();
+		FileReader fr = new FileReader(sample);
+		BufferedReader br = new BufferedReader(fr);
+		int lineCount = 0;
+		int charCount = 0;
+		String chars;
+		while ((chars = br.readLine()) != null) {
+			// zzz列資料
+			lineCount++;
+			// yyy個字元
+			charCount += chars.length();
+		}
+		System.out.printf("%s檔案共有%d個位元組，%d個字元，%d列資料", fileName, bytesCount, charCount, lineCount);
+		br.close();
+		fr.close();
 	}
 }

@@ -1,6 +1,7 @@
 package hw7;
 
-public class Dog {
+public class Dog implements Animal{
+	private static final long serialVersionUID = 1L;
 	private String name;
 
 	public Dog(String name) {
