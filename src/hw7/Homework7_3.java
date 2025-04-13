@@ -12,12 +12,11 @@ public class Homework7_3 {
 	public static void main(String[] args) {
 		File copyFrom1 = new File("src/hw7/copyFrom.txt");
 		File copyTo1 = new File("src/hw7/copyTo.txt");
-		
 		Homework7_2.writeFile(copyFrom1);
 		try {
 			copyFrom1.createNewFile();
 			copyTo1.createNewFile();
-			copyFile(copyFrom1,copyTo1);
+			copyFile(copyFrom1, copyTo1);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -30,7 +29,7 @@ public class Homework7_3 {
 			FileWriter fw = new FileWriter(copyTo);
 			BufferedWriter bw = new BufferedWriter(fw);
 			BufferedReader br = new BufferedReader(fr);
-			
+
 			String line;
 			while ((line = br.readLine()) != null) {
 				bw.write(line);

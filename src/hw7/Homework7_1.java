@@ -22,7 +22,7 @@ public class Homework7_1 {
 //	Sample.txt檔案共有xxx個位元組,yyy個字元,zzz列資料
 	public static void main(String[] args) throws IOException {
 		File sample = new File("src/hw7/Sample.txt");
-//		System.out.println(sample.exists());
+		// System.out.println(sample.exists());
 		// 檔案名稱
 		String fileName = sample.getName();
 		// xxx個位元組
